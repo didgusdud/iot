@@ -3,15 +3,16 @@ var client  = mqtt.connect('mqtt://52.79.164.177');
 
 var fs = require('fs');
 
-file = 'peaches.txt';
+file = 'sea.jpg';
 msg = fs.readFileSync(file);
 
 buf = {
     "file": file,
-    "msg": msg,
+    "data": data,
 };
 
 client.on('connect', function () {
+    client.subscribe('topic1');
     client.publish('topic1', JSON.stringify(buf));
     client.end();
 });
