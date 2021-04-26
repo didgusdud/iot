@@ -7,7 +7,7 @@ client.on('connect', function () {
 });
  
 client.on('message', function (topic, message) {
-      data = JSON.parse(message);
-      fs.writeFileSync('new.jpg', data.data);
+      data = message;
+      fs.writeFileSync('new.txt', data);
       client.end();
 });
