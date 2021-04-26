@@ -4,6 +4,7 @@ var fs = require('fs');
  
 client.on('connect', function () {
       client.subscribe('receiver sub cws');
+      client.end();
 });
  
 client.on('message', function (topic, message) {
