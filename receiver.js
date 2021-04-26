@@ -7,7 +7,7 @@ client.on('connect', ()=> {
 });
  
 client.on('message', (topic, message)=> {
-      data = message.toString();
-      fs.writeFileSync('new.txt', data);
+      data = message;
+      fs.writeFileSync('new.txt', data.toString());
       client.end();
 });
