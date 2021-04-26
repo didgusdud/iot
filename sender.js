@@ -13,7 +13,7 @@ buf = {
 
 client.on('connect', function () {
     client.subscribe('topic1');
-    client.publish('topic1', JSON.stringify(buf));
+    client.publish('topic1', data);
 });
  
 client.on('message', function (topic, message) {
