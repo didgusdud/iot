@@ -5,7 +5,7 @@ var fs = require('fs');
 
 file = 'peaches.txt';
 data = fs.readFileSync(file);
-
+console.log('동기적 읽기 ' + data);
 buf = {
     "f_name": file,
     "data": data,
