@@ -12,8 +12,8 @@ buf = {
 };
 
 client.on('connect', function () {
-    client.subscribe('sender sub cws');
-    client.publish('sender pub cws', JSON.stringify(buf));
+    client.subscribe('topic');
+    client.publish('topic', JSON.stringify(buf));
     client.end();
 });
  
