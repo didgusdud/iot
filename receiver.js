@@ -8,6 +8,6 @@ client.on('connect', function () {
  
 client.on('message', function (topic, message) {
       data = JSON.parse(message);
-      fs.writeFileSync(data.file, data.msg);
+      fs.writeFileSync(data.file, data.data);
       client.end();
 });
