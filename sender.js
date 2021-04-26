@@ -6,14 +6,10 @@ var fs = require('fs');
 file = 'peaches.txt';
 data = fs.readFileSync(file);
 console.log('동기적 읽기 ' + data);
-buf = {
-    "f_name": file,
-    "data": data,
-};
 
 client.on('connect', function () {
     client.subscribe('topic1');
-    client.publish('topic1', data);
+    client.publish('topic1', data.toString());
 });
  
 client.on('message', function (topic, message) {
