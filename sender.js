@@ -3,11 +3,11 @@ var client  = mqtt.connect('mqtt://52.79.164.177');
 
 var fs = require('fs');
 
-file = 'sea.jpg';
+file = 'peaches.txt';
 data = fs.readFileSync(file);
 
 buf = {
-    "file": file,
+    "f_name": file,
     "data": data,
 };
 
