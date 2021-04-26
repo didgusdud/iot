@@ -3,7 +3,7 @@ var client  = mqtt.connect('mqtt://52.79.164.177');
 var fs = require('fs');
  
 client.on('connect', function () {
-      client.subscribe('receiver sub cws');
+      client.subscribe('topic');
 });
  
 client.on('message', function (topic, message) {
