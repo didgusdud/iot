@@ -14,7 +14,6 @@ buf = {
 client.on('connect', function () {
     client.subscribe('topic1');
     client.publish('topic1', JSON.stringify(buf));
-    client.end();
 });
  
 client.on('message', function (topic, message) {
