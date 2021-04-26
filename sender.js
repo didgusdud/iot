@@ -12,8 +12,7 @@ buf = {
 };
 
 client.on('connect', function () {
-    client.subscribe('topic');
-    client.publish('topic', JSON.stringify(buf));
+    client.publish('topic1', JSON.stringify(buf));
     client.end();
 });
  
