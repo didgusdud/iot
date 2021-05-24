@@ -19,11 +19,12 @@ fire_management_system.on('connect', function () {
 
     var registeredImage = ['fire'];
     fire_management_system.on('message', function (topic, message) {
-        console .log('Request:', message.toString());
+        console.log('Request:', message.toString());
         var req = JSON.parse(message.toString());
         if (topic != 'fire/alarm') return;
         else {
-            fire_management_system.publish(req.notify, JSON.stringify({'command': 'activation'}));
+            fire_management_system.publish(req.notify, JSON.stringify({'activation command': 'activation'}));
+            console.log('publish to fire/alert' + JSON.stringify({'fire_alert_message': 'alert'}));
             fire_management_system.publish('fire/alert', JSON.stringify({'fire_alert_message': 'alert'}));
         }
     })
